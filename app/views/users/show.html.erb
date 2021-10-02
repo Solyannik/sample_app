@@ -1,0 +1,28 @@
+<% provide(:title, @user.name) %> 
+<div class="row"> 
+  <aside class="col-md-4"> 
+  	<section> 
+      <h1>
+        <% if @user.avatar? %>
+  	  	  <%= image_tag @user.avatar.url(:thumb), class: 'avatar-show' %> 
+        <% else %>
+          <%= gravatar_for @user %> 
+        <% end %> 
+  	    <%= @user.name %> 
+      </h1>
+  	</section> 
+    <section class="stats">
+      <%= render 'shared/stats' %>  
+    </section>
+  </aside> 
+  <div class="col-md-8 pagination"> 
+    <%= render 'follow_form' if logged_in? %>
+    <% if @user.microposts.any? %> 
+      <h3>Сообщения (<%= @user.microposts.count %>)</h3> 
+      <ol class="microposts"> 
+        <%= render @microposts %> 
+      </ol> 
+      <%= will_paginate @microposts %> 
+    <% end %> 
+  </div>
+</div>

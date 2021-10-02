@@ -1,0 +1,16 @@
+one: 
+  follower: olga 
+  followed: lana 
+
+two: 
+  follower: olga 
+  followed: malory 
+
+three: 
+  follower: lana 
+  followed: olga 
+
+four: 
+  follower: archer 
+  followed: olga
+  

@@ -1,0 +1,20 @@
+<% provide(:title, "Редактирование профиля") %> 
+<h1>Редактирование профиля</h1> 
+<div class="row"> 
+  <div class="col-md-6 col-md-offset-3"> 
+    <%= form_for @user, html: { multipart: true } do |f| %>  
+      <%= render 'shared/error_messages', object: f.object %> 
+      <%= f.label "Фото" %> 
+      <%= f.file_field :avatar, class: 'form-control' %>  
+      <%= f.label "Имя" %> 
+      <%= f.text_field :name, class: 'form-control' %> 
+      <%= f.label "Электронный адрес" %> 
+      <%= f.email_field :email, class: 'form-control' %> 
+      <%= f.label "Пароль" %> 
+      <%= f.password_field :password, class: 'form-control' %> 
+      <%= f.label :password_confirmation, "Подтверждение пароля" %> 
+      <%= f.password_field :password_confirmation, class: 'form-control' %> 
+      <%= f.submit "Сохранить изминения", class: "btn btn-primary" %> 
+    <% end %>
+  </div>
+</div>

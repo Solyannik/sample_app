@@ -1,0 +1,3 @@
+Приветствуем <%= @user.name %>, 
+Добро пожаловать в компьютерный сервис! Пройдите по ссылке для активации Вашего аккаунта: 
+<%= edit_account_activation_url(@user.activation_token, email: @user.email) %>

@@ -1,0 +1,50 @@
+<% if logged_in? %> 
+  <div class="row"> 
+    <aside class="col-md-4"> 
+      <section class="user_info"> 
+        <%= render 'shared/user_info' %> 
+      </section> 
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+      <section class="micropost_form"> 
+        <%= render 'shared/micropost_form' %> 
+      </section> 
+    </aside> 
+    <div class="col-md-8"> 
+      <h3>Сообщения</h3> 
+      <%= render 'shared/feed' %> 
+    </div>
+  </div> 
+<% else %>
+  <div class="intro">
+    <img src='service.jpg' alt='Фото'>
+    <h1><span><strong>РЕМОНТ КОМПЬЮТЕРНОЙ ТЕХНИКИ &nbsp</strong><br/><br/>&nbsp быстро и качественно<br/><br/></h1></span>
+    <div class="title">ПОЧЕМУ НУЖНО ПОЗВОНИТЬ МНЕ?</div>
+  </div>
+
+  <div class="column-1-2">
+    <div class="member-image">
+      <img src="/images/check.jpg" alt="Галочка" width="40" height="40"/>
+      <small class="text-small">Выполняю ремонт быстро, без всяких доплат и затягивания сроков. </small>
+      <div>
+        <img src="/images/check.jpg" alt="Галочка" width="40" height="40"/
+        <small class="text-small">По завершению  работы даю гарантию сроком  на год. </small>
+      </div>
+    </div>
+  </div>
+  <div class="column-1-2">
+    <div class="member-image">
+      <img src="/images/check.jpg" alt="Галочка" width="40" height="40"/>
+      <small class="text-small">В 90% случаев удаётся решить проблему на месте, не забирая технику на долгий ремонт.</small>
+      <div>
+        <img src="/images/check.jpg" alt="Галочка" width="40" height="40"/>
+        <small class="text-small">Работаю на совесть. Оглашаю реальную стоимость ремонта ДО начала работ. </small>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "Зарегистрироваться", signup_path, class: "btn btn-lg btn-primary" %> 
+  </div> 
+<% end %>

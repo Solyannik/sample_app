@@ -1,0 +1,11 @@
+<li>
+  <% if user.avatar? %>
+  	<%= image_tag user.avatar.url(:thumb), size: 50 %> 
+  <% else %>
+    <%= gravatar_for user , size: 50 %>   
+  <% end %> 
+  <%= link_to user.name, user %>
+  <% if current_user.admin? && !current_user?(user) %>
+    | <%= link_to "Удалить", user, method: :delete, data: { confirm: "Вы уверены?" } %> 
+  <% end %>
+</li> 
